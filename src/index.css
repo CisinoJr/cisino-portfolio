@@ -1,0 +1,241 @@
+/* =====================
+   THEME VARIABLES
+===================== */
+:root {
+  --bg: #0b0f14;
+  --surface: #111827;
+  --surface-soft: #161e2e;
+  --border: #1f2937;
+
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+
+  --primary: #3b82f6;
+  --primary-soft: #2563eb;
+}
+
+:root[data-theme="light"] {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --surface-soft: #f3f4f6;
+  --border: #e5e7eb;
+
+  --text-main: #111827;
+  --text-muted: #4b5563;
+
+  --primary: #2563eb;
+  --primary-soft: #1d4ed8;
+}
+
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 3.5rem; /* prevents fixed header overlap */
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+section {
+  padding: 4rem 1.5rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: var(--text-muted);
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: var(--primary-soft);
+}
+
+/* =====================
+   CARDS & GRID
+===================== */
+.card {
+  background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =====================
+   HEADER TOOLS (FIXED)
+===================== */
+.header-tools {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 100;
+}
+
+/* Language switcher */
+.language-switcher {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.language-switcher button {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.language-switcher button:hover {
+  border-color: var(--primary);
+}
+
+.language-switcher button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.language-switcher .flag {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .language-switcher .label {
+    display: none;
+  }
+}
+
+/* Theme toggle */
+.theme-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+}
+
+/* =====================
+   TIMELINE
+===================== */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  border-left: 2px solid var(--border);
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+}
