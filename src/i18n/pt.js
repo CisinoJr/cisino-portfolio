@@ -1,6 +1,6 @@
 export default {
   seo: {
-    title: "Engenheiro de Software Sênior & Consultor Backend | Freelancer",
+    title: "Cisino Junior - Engenheiro de Software Sênior | Freelancer",
     description:
       "Engenheiro de software sênior especializado em backend, aplicações web e mobile, microsserviços e arquitetura cloud."
   },
